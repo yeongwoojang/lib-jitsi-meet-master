@@ -306,7 +306,8 @@ class RTCUtils extends Listenable {
             }
             navigator.mediaDevices.getUserMedia(constraints)
                 .then(stream => {
-                logger.log('onUserMediaSuccess아아아아아아아아');
+                console.trace('onUserMediaSuccessㅋㅋㅋㅋㅋ');
+                logger.log('onUserMediaSuccessㅋㅋㅋㅋㅋ');
                 this._updateGrantedPermissions(umDevices, stream);
                 if (!timeoutExpired) {
                     if (typeof gumTimeout !== 'undefined') {
