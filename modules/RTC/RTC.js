@@ -348,6 +348,8 @@ export default class RTC extends Listenable {
     static init(options = {}) {
         this.options = options;
 
+        console.log("init");
+        console.log(this.options);
         return RTCUtils.init(this.options);
     }
 

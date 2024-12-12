@@ -884,6 +884,8 @@ const rtcUtils = new RTCUtils();
  */
 function wrapAttachMediaStream(origAttachMediaStream) {
     return function(element, stream) {
+        console.log("origAttachMediaStream");
+        console.log(origAttachMediaStream);
         // eslint-disable-next-line prefer-rest-params
         origAttachMediaStream.apply(rtcUtils, arguments);
 
