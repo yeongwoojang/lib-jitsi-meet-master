@@ -335,6 +335,7 @@ class RTCUtils extends Listenable {
     _getUserMedia(umDevices, constraints = {}, timeout = 0) {
         return new Promise((resolve, reject) => {
             let gumTimeout, timeoutExpired = false;
+            console.trace('ASDASD');
             
             if (typeof timeout === 'number' && !isNaN(timeout) && timeout > 0) {
                 gumTimeout = setTimeout(() => {
