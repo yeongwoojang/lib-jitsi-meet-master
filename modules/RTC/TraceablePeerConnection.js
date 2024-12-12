@@ -364,7 +364,7 @@ export default function TraceablePeerConnection(
 
     this.onTrack = evt => {
         const stream = evt.streams[0];
-
+        console.log('onTrack!');
         this._remoteTrackAdded(stream, evt.track, evt.transceiver);
         stream.addEventListener('removetrack', e => {
             this._remoteTrackRemoved(stream, e.track);
