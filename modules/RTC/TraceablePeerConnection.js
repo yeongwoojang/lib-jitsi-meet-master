@@ -2479,7 +2479,7 @@ TraceablePeerConnection.prototype._createOfferOrAnswer = function(isOffer, const
 
     return new Promise((resolve, reject) => {
         let oaPromise;
-
+        console.log('Answer !!!');
         if (isOffer) {
             oaPromise = this.peerconnection.createOffer(constraints);
         } else {

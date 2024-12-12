@@ -2081,6 +2081,7 @@ TraceablePeerConnection.prototype._createOfferOrAnswer = function (isOffer, cons
     }
     return new Promise((resolve, reject) => {
         let oaPromise;
+        console.log('Answer !!!');
         if (isOffer) {
             oaPromise = this.peerconnection.createOffer(constraints);
         }

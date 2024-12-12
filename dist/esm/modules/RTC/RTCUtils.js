@@ -246,6 +246,8 @@ class RTCUtils extends Listenable {
             this.attachMediaStream
                 = wrapAttachMediaStream((element, stream) => {
                     if (element) {
+                        console.log("stream");
+                        console.log(stream);
                         element.srcObject = stream;
                     }
                 });
