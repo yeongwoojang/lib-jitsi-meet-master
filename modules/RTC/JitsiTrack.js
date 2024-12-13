@@ -216,6 +216,7 @@ export default class JitsiTrack extends EventEmitter {
 
         if (this.stream) {
             this._onTrackAttach(container);
+            console.log("attach");
             result = RTCUtils.attachMediaStream(container, this.stream);
         }
         this.containers.push(container);
@@ -238,6 +239,7 @@ export default class JitsiTrack extends EventEmitter {
 
             if (!container) {
                 this._onTrackDetach(c);
+                console.log("detach");
                 RTCUtils.attachMediaStream(c, null).catch(() => {
                     logger.error(`Detach for ${this} failed!`);
                 });
@@ -249,6 +251,7 @@ export default class JitsiTrack extends EventEmitter {
 
         if (container) {
             this._onTrackDetach(container);
+            console.log("detach null");
             RTCUtils.attachMediaStream(container, null).catch(() => {
                 logger.error(`Detach for ${this} failed!`);
             });

@@ -465,6 +465,7 @@ export default class JitsiLocalTrack extends JitsiTrack {
                     this._startStreamEffect(this._streamEffect);
                 }
 
+                console.log("setMuted");
                 this.containers.map(cont => RTCUtils.attachMediaStream(cont, this.stream).catch(() => {
                     logger.error(`Attach media failed for ${this} on video unmute!`);
                 }));
@@ -879,6 +880,7 @@ export default class JitsiLocalTrack extends JitsiTrack {
             this._switchStreamEffect(effect);
             if (this.isVideoTrack()) {
                 this.containers.forEach(cont => {
+                    console.log("setEffect");
                     RTCUtils.attachMediaStream(cont, this.stream).catch(() => {
                         logger.error(`Attach media failed for ${this} when trying to set effect.`);
                     });
@@ -895,6 +897,7 @@ export default class JitsiLocalTrack extends JitsiTrack {
                 this._switchStreamEffect(effect);
                 if (this.isVideoTrack()) {
                     this.containers.forEach(cont => {
+                        console.log("isVideoTrack");
                         RTCUtils.attachMediaStream(cont, this.stream).catch(() => {
                             logger.error(`Attach media failed for ${this} when trying to set effect.`);
                         });

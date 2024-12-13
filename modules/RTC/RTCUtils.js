@@ -268,7 +268,7 @@ class RTCUtils extends Listenable {
         availableDevicesPollTimer = undefined;
 
         if (!browser.isReactNative()) {
-            this.attachMediaStream
+            this.attachMediaStream //_ 봐야함.
                 = wrapAttachMediaStream((element, stream) => {
                     if (element) {
                         console.log("stream");
