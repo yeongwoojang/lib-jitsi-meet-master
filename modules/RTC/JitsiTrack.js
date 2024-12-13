@@ -215,6 +215,8 @@ export default class JitsiTrack extends EventEmitter {
         let result = Promise.resolve();
 
         if (this.stream) {
+            console.log("container");
+            console.log(container);
             this._onTrackAttach(container);
             console.log("attach");
             result = RTCUtils.attachMediaStream(container, this.stream);
