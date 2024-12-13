@@ -223,20 +223,6 @@ export default class JitsiTrack extends EventEmitter {
 
         if (this.stream) {
             // 새로운 canvas 요소 생성
-            const canvas = document.createElement("canvas");
-
-            // canvas에 id 부여 (선택 사항)
-            canvas.id = "myCanvas";
-
-            // canvas 크기 설정
-            canvas.width = 300;
-            canvas.height = 200;
-
-            document.body.appendChild(canvas);
-
-            // 특정 div 요소에 추가
-            const myDiv = document.getElementById('root');
-            myDiv.appendChild(canvas);
 
             console.log("container");
             console.log(container);
