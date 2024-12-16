@@ -756,6 +756,8 @@ export default class ChatRoom extends Listenable {
      * @param elementName
      */
     sendMessage(message, elementName) {
+        console.log("sendMessage");
+        console.log(message);
         const msg = $msg({ to: this.roomjid,
             type: 'groupchat' });
         // We are adding the message in a packet extension. If this element
