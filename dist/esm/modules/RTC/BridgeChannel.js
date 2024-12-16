@@ -243,7 +243,6 @@ export default class BridgeChannel {
             }
         };
         channel.onmessage = ({ data }) => {
-            console.log("data: " + data);
             // JSON object.
             let obj;
             try {
@@ -357,8 +356,6 @@ export default class BridgeChannel {
      * or from WebSocket#send or Error with "No opened channel" message.
      */
     _send(jsonObject) {
-        console.log("jsonObject");
-        console.log(jsonObject);
         const channel = this._channel;
         if (!this.isOpen()) {
             logger.error('Bridge Channel send: no opened channel.');
