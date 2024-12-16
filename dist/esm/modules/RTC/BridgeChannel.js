@@ -243,6 +243,7 @@ export default class BridgeChannel {
             }
         };
         channel.onmessage = ({ data }) => {
+            console.log("data: " + data);
             // JSON object.
             let obj;
             try {
