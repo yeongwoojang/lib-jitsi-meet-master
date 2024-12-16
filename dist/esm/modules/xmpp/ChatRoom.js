@@ -993,6 +993,7 @@ export default class ChatRoom extends Listenable {
         if (txt) {
             const messageId = $(msg).attr('id') || uuidv4();
             if (type === 'chat') {
+                console.log("private message received!!!!!!!!!!");
                 this.eventEmitter.emit(XMPPEvents.PRIVATE_MESSAGE_RECEIVED, from, txt, this.myroomjid, stamp, messageId);
             }
             else if (type === 'groupchat') {
