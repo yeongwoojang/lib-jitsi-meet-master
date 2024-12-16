@@ -348,8 +348,6 @@ export default class RTC extends Listenable {
     static init(options = {}) {
         this.options = options;
 
-        console.log("init");
-        console.log(this.options);
         return RTCUtils.init(this.options);
     }
 
@@ -581,7 +579,6 @@ export default class RTC extends Listenable {
      * @param stream
      */
     static attachMediaStream(elSelector, stream) {
-        console.log("attachMediaStream");
         return RTCUtils.attachMediaStream(elSelector, stream);
     }
 

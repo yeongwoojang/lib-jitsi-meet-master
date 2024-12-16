@@ -243,10 +243,12 @@ export default class BridgeChannel {
             }
         };
         channel.onmessage = ({ data }) => {
+            console.log("data: " + data);
             // JSON object.
             let obj;
             try {
                 obj = safeJsonParse(data);
+                console.log("obj: " + obj);
             }
             catch (error) {
                 logger.error('Failed to parse channel message as JSON: ', data, error);
@@ -357,6 +359,8 @@ export default class BridgeChannel {
      */
     _send(jsonObject) {
         const channel = this._channel;
+        console.log("jsonObject");
+        console.log(jsonObject);
         if (!this.isOpen()) {
             logger.error('Bridge Channel send: no opened channel.');
             throw new Error('No opened channel');

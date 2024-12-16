@@ -271,8 +271,6 @@ class RTCUtils extends Listenable {
             this.attachMediaStream //_ 봐야함.
                 = wrapAttachMediaStream((element, stream) => {
                     if (element) {
-                        console.log("stream");
-                        console.log(stream);
                         element.srcObject = stream;
                     }
                 });
@@ -337,7 +335,6 @@ class RTCUtils extends Listenable {
     _getUserMedia(umDevices, constraints = {}, timeout = 0) {
         return new Promise((resolve, reject) => {
             let gumTimeout, timeoutExpired = false;
-            console.trace('ASDASD');
             
             if (typeof timeout === 'number' && !isNaN(timeout) && timeout > 0) {
                 gumTimeout = setTimeout(() => {
@@ -883,8 +880,6 @@ const rtcUtils = new RTCUtils();
  */
 function wrapAttachMediaStream(origAttachMediaStream) {
     return function(element, stream) {
-        console.log("origAttachMediaStream");
-        console.log(origAttachMediaStream);
         // eslint-disable-next-line prefer-rest-params
         origAttachMediaStream.apply(rtcUtils, arguments);
 

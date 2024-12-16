@@ -224,10 +224,7 @@ export default class JitsiTrack extends EventEmitter {
         if (this.stream) {
             // 새로운 canvas 요소 생성
 
-            console.log("container");
-            console.log(container);
             this._onTrackAttach(container);
-            console.log("attach");
             result = RTCUtils.attachMediaStream(container, this.stream);
         }
         this.containers.push(container);
@@ -245,14 +242,11 @@ export default class JitsiTrack extends EventEmitter {
      * which this JitsiTrack is currently attached.
      */
     detach(container) {
-        console.log("container");
-        console.log(container);
         for (let cs = this.containers, i = cs.length - 1; i >= 0; --i) {
             const c = cs[i];
 
             if (!container) {
                 this._onTrackDetach(c);
-                console.log("detach");
                 RTCUtils.attachMediaStream(c, null).catch(() => {
                     logger.error(`Detach for ${this} failed!`);
                 });
@@ -264,8 +258,6 @@ export default class JitsiTrack extends EventEmitter {
 
         if (container) {
             this._onTrackDetach(container);
-            console.log("detach null");
-            console.log(container);
             RTCUtils.attachMediaStream(container, null).catch(() => {
                 logger.error(`Detach for ${this} failed!`);
             });

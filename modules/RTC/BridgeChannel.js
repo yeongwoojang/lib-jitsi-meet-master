@@ -427,6 +427,8 @@ export default class BridgeChannel {
     _send(jsonObject) {
         const channel = this._channel;
 
+        console.log("jsonObject");
+        console.log(jsonObject);
         if (!this.isOpen()) {
             logger.error('Bridge Channel send: no opened channel.');
             throw new Error('No opened channel');
