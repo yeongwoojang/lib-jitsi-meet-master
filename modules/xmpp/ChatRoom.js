@@ -1161,6 +1161,9 @@ export default class ChatRoom extends Listenable {
      * @param from
      */
     onMessage(msg, from) {
+        console.log("onMessage");
+        console.log(msg);
+        console.log(from);
         const type = msg.getAttribute('type');
 
         if (type === 'error') {
