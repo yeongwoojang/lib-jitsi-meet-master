@@ -288,13 +288,15 @@ export default class BridgeChannel {
         };
 
         channel.onmessage = ({ data }) => {
-            console.log("data: " + data);
+            console.log('data');
+            console.log(data);
             // JSON object.
             let obj;
             
             try {
                 obj = safeJsonParse(data);
-                console.log("obj: " + obj);
+                console.log('obj');
+                console.log(obj);
             } catch (error) {
                 logger.error('Failed to parse channel message as JSON: ', data, error);
 
@@ -321,10 +323,10 @@ export default class BridgeChannel {
                 break;
             }
             case 'EndpointMessage': {
-                if (data.type === 'CLICK_VIDEO_LAYOUT') {
+                if (data.msgPayload.type === 'CLICK_VIDEO_LAYOUT') {
                     console.log('CLICK_VIDEO_LAYOUT');
-                    console.log(data.data.xPoint);
-                    console.log(data.data.yPoint);
+                    console.log(data.msgPayload.data.xPoint);
+                    console.log(data.msgPayload.data.yPoint);
                     emitter.emit(RTCEvents.X_Y_POINT_RECEIVED, obj.from, obj);
                 } else {
                     emitter.emit(RTCEvents.ENDPOINT_MESSAGE_RECEIVED, obj.from, obj.msgPayload);
@@ -432,9 +434,6 @@ export default class BridgeChannel {
      */
     _send(jsonObject) {
         const channel = this._channel;
-
-        console.log("jsonObject");
-        console.log(jsonObject);
         if (!this.isOpen()) {
             logger.error('Bridge Channel send: no opened channel.');
             throw new Error('No opened channel');
