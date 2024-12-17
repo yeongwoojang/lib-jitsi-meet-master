@@ -244,7 +244,6 @@ export default class BridgeChannel {
         };
         channel.onmessage = ({ data }) => {
             console.log("data: " + data);
-            console.log("test");
             // JSON object.
             let obj;
             try {
@@ -271,9 +270,10 @@ export default class BridgeChannel {
                     break;
                 }
                 case 'EndpointMessage': {
-                    if (obj.type === 'CLICK_VIDEO_LAYOUT') {
-                        console.log(obj.data.xPoint);
-                        console.log(obj.data.yPoint);
+                    if (data.type === 'CLICK_VIDEO_LAYOUT') {
+                        console.log('CLICK_VIDEO_LAYOUT');
+                        console.log(data.data.xPoint);
+                        console.log(data.data.yPoint);
                         emitter.emit(RTCEvents.X_Y_POINT_RECEIVED, obj.from, obj);
                     }
                     else {
