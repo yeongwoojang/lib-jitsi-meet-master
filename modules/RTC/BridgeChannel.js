@@ -331,7 +331,7 @@ export default class BridgeChannel {
                 if (obj.type === 'CLICK_VIDEO_LAYOUT') {
                     console.log(obj.data.xPoint);
                     console.log(obj.data.yPoint);
-                    emitter.emit(RTCEvents.ENDPOINT_STATS_RECEIVED, obj.from, obj);
+                    emitter.emit(RTCEvents.X_Y_POINT_RECEIVED, obj.from, obj);
                 }
                 break;
             }
