@@ -304,9 +304,6 @@ JitsiConferenceEventManager.prototype.setupRTCListeners = function () {
         }
     });
     rtc.addListener(RTCEvents.ENDPOINT_STATS_RECEIVED, (from, payload) => {
-        console.log("RTC Listener RTCEvents.ENDPOINT_STATS_RECEIVED");
-        console.log(from);
-        console.log(payload);
         const participant = conference.getParticipantById(from);
         if (participant) {
             conference.eventEmitter.emit(JitsiConferenceEvents.ENDPOINT_STATS_RECEIVED, participant, payload);
