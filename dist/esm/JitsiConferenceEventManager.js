@@ -313,6 +313,7 @@ JitsiConferenceEventManager.prototype.setupRTCListeners = function () {
         }
     });
     rtc.addListener(RTCEvents.X_Y_POINT_RECEIVED, (from, payload) => {
+        console.log('RTCEvents.X_Y_POINT_RECEIVED');
         const participant = conference.getParticipantById(from);
         if (participant) {
             console.log("X_Y_POINT_RECEIVED");
