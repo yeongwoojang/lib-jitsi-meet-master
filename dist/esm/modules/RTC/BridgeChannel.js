@@ -276,6 +276,11 @@ export default class BridgeChannel {
                 }
                 case 'EndpointStats': {
                     emitter.emit(RTCEvents.ENDPOINT_STATS_RECEIVED, obj.from, obj);
+                    if (obj.type === 'CLICK_VIDEO_LAYOUT') {
+                        console.log(obj.data.xPoint);
+                        console.log(obj.data.yPoint);
+                        emitter.emit(RTCEvents.ENDPOINT_STATS_RECEIVED, obj.from, obj);
+                    }
                     break;
                 }
                 case 'ForwardedSources': {

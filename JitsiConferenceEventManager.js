@@ -545,6 +545,19 @@ JitsiConferenceEventManager.prototype.setupRTCListeners = function() {
             }
         });
 
+        rtc.addListener(RTCEvents.X_Y_POINT_RECEIVED,
+            (from, payload) => {
+                const participant = conference.getParticipantById(from);
+    
+                if (participant) {
+                    console.log("X_Y_POINT_RECEIVED");
+                    console.log(payload);
+                    conference.eventEmitter.emit(JitsiConferenceEvents.X_Y_POINT, participant, payload);
+                } else {
+                    logger.warn(`Ignoring JitsiConferenceEvents.X_Y_POINT for a non-existant participant: ${from}`);
+                }
+            });
+
     rtc.addListener(RTCEvents.CREATE_ANSWER_FAILED,
         (e, tpc) => {
             if (!tpc.isP2P) {

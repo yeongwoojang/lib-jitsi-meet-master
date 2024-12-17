@@ -174,6 +174,7 @@ export var JitsiConferenceEvents;
      * Indicates that a message for the remote endpoint statistics has been received on the bridge channel.
      */
     JitsiConferenceEvents["ENDPOINT_STATS_RECEIVED"] = "conference.endpoint_stats_received";
+    JitsiConferenceEvents["X_Y_POINT"] = "conference.x_y_point";
     /**
      * The forwarded sources set is changed.
      *
@@ -455,6 +456,7 @@ export const E2EE_VERIFICATION_READY = JitsiConferenceEvents.E2EE_VERIFICATION_R
 export const ENCODE_TIME_STATS_RECEIVED = JitsiConferenceEvents.ENCODE_TIME_STATS_RECEIVED;
 export const ENDPOINT_MESSAGE_RECEIVED = JitsiConferenceEvents.ENDPOINT_MESSAGE_RECEIVED;
 export const ENDPOINT_STATS_RECEIVED = JitsiConferenceEvents.ENDPOINT_STATS_RECEIVED;
+export const X_Y_POINT = JitsiConferenceEvents.ENDPOINT_STATS_RECEIVED;
 export const FORWARDED_SOURCES_CHANGED = JitsiConferenceEvents.FORWARDED_SOURCES_CHANGED;
 export const JVB121_STATUS = JitsiConferenceEvents.JVB121_STATUS;
 export const KICKED = JitsiConferenceEvents.KICKED;

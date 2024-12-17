@@ -85,6 +85,8 @@ export enum RTCEvents {
      * Indicates that the remote endpoint stats have been received on data channel.
      */
     ENDPOINT_STATS_RECEIVED = 'rtc.endpoint_stats_received',
+    
+    X_Y_POINT_RECEIVED = 'rtc.x_y_point_received',
 
     /**
      * Designates an event indicating that the local ICE username fragment of

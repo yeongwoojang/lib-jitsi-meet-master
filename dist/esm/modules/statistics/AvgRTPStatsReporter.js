@@ -143,12 +143,7 @@ class ConnectionAvgStats {
             this._onUserLeft = id => this._avgRemoteRTTMap.delete(id);
             conference.on(ConferenceEvents.USER_LEFT, this._onUserLeft);
             this._onRemoteStatsUpdated
-                = (id, data) => {
-                    console.log("_onRemoteStatsUpdated");
-                    console.log("id: " + id);
-                    console.log("data: " + data);
-                    this._processRemoteStats(id, data);
-                };
+                = (id, data) => this._processRemoteStats(id, data);
             conference.on(ConnectionQualityEvents.REMOTE_STATS_UPDATED, this._onRemoteStatsUpdated);
         }
     }

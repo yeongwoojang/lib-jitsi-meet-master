@@ -71,6 +71,7 @@ export var RTCEvents;
      * Indicates that the remote endpoint stats have been received on data channel.
      */
     RTCEvents["ENDPOINT_STATS_RECEIVED"] = "rtc.endpoint_stats_received";
+    RTCEvents["X_Y_POINT_RECEIVED"] = "rtc.x_y_point_received";
     /**
      * Designates an event indicating that the local ICE username fragment of
      * the jingle session has changed.
