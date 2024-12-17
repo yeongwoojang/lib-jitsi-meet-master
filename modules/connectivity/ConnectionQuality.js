@@ -182,6 +182,9 @@ export default class ConnectionQuality {
         conference.on(
             ConferenceEvents.ENDPOINT_STATS_RECEIVED,
             (participant, payload) => {
+                console.log("ENDPOINT_STATS_RECEIVED");
+                console.log(participant);
+                console.log(payload);
                 this._updateRemoteStats(participant.getId(), payload);
             });
 
