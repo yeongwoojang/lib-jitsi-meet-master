@@ -980,6 +980,7 @@ JitsiConference.prototype.sendTextMessage = function(message, elementName = 'bod
     if (this.room) {
         console.log('sendTextMessage', message, elementName);
         console.log('sendTextMessage 테스트', message, elementName);
+        console.log('sendTextMessage 테스트2', message, elementName);
         this.room.sendMessage(message, elementName);
     }
 };
