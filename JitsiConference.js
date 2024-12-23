@@ -978,6 +978,8 @@ JitsiConference.prototype.removeCommandListener = function(command, handler) {
  */
 JitsiConference.prototype.sendTextMessage = function(message, elementName = 'body') {
     if (this.room) {
+        console.log('sendTextMessage', message, elementName);
+        console.log('sendTextMessage 테스트', message, elementName);
         this.room.sendMessage(message, elementName);
     }
 };
