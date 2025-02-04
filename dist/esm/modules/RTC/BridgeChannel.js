@@ -279,7 +279,6 @@ export default class BridgeChannel {
                         emitter.emit(RTCEvents.X_Y_POINT_RECEIVED, obj.from, obj);
                     }
                     else {
-                        console.log('아아아아아');
                         emitter.emit(RTCEvents.ENDPOINT_MESSAGE_RECEIVED, obj.from, obj.msgPayload);
                     }
                     break;
