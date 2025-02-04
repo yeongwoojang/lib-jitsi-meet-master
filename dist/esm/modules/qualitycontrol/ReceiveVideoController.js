@@ -161,6 +161,7 @@ export default class ReceiveVideoController {
      * @returns {void}
      */
     setPreferredReceiveMaxFrameHeight(maxFrameHeight) {
+        console.log('setPreferredReceiveMaxFrameHeight 설정입니다.', maxFrameHeight);
         this._maxFrameHeight = maxFrameHeight;
         for (const session of this._conference.getMediaSessions()) {
             if (session.isP2P) {
