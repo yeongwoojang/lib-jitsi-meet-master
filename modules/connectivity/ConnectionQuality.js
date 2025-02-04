@@ -301,8 +301,10 @@ export default class ConnectionQuality {
             } else if (packetLoss <= 12) {
                 quality = 10; // 1 bars
             } else {
-                quality = 0; // Still 1 bar, but slower climb-up.
+                quality = 0; // Still 1 bar, but slower climb-up.d=
             }
+            console.log('quality설정입니다.', quality);
+            console.log('packetLoss설정입니다.', packetLoss);
         } else {
             // Calculate a value based on the send video bitrate on the active TPC.
             const activeTPC = this._conference.getActivePeerConnection();
