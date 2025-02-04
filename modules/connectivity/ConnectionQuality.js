@@ -345,7 +345,9 @@ export default class ConnectionQuality {
             quality = Math.min(quality, prevConnectionQuality + (diffSeconds * maxIncreasePerSecond));
         }
 
-        return Math.min(100, quality);
+        const qualityValue = Math.min(100, quality);
+        console.log('qualityValue설정입니다.', qualityValue);
+        return qualityValue;
     }
 
     /**

@@ -284,7 +284,9 @@ export default class ConnectionQuality {
             const diffSeconds = (window.performance.now() - this._lastConnectionQualityUpdate) / 1000;
             quality = Math.min(quality, prevConnectionQuality + (diffSeconds * maxIncreasePerSecond));
         }
-        return Math.min(100, quality);
+        const qualityValue = Math.min(100, quality);
+        console.log('qualityValue설정입니다.', qualityValue);
+        return qualityValue;
     }
     /**
      * Updates the localConnectionQuality value
