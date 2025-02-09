@@ -212,7 +212,6 @@ export default class ConnectionQuality {
             });
         conference.rtc.on(
             RTCEvents.LOCAL_TRACK_MAX_ENABLED_RESOLUTION_CHANGED,
-            console.log('LOCAL_TRACK_MAX_ENABLED_RESOLUTION_CHANGED'),
             track => {
                 this._localStats.maxEnabledResolution = track.maxEnabledResolution;
             });

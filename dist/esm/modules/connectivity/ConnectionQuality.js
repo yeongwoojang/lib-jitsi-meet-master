@@ -171,7 +171,7 @@ export default class ConnectionQuality {
                 this._maybeUpdateUnmuteTime();
             }
         });
-        conference.rtc.on(RTCEvents.LOCAL_TRACK_MAX_ENABLED_RESOLUTION_CHANGED, console.log('LOCAL_TRACK_MAX_ENABLED_RESOLUTION_CHANGED'), track => {
+        conference.rtc.on(RTCEvents.LOCAL_TRACK_MAX_ENABLED_RESOLUTION_CHANGED, track => {
             this._localStats.maxEnabledResolution = track.maxEnabledResolution;
         });
         conference.on(ConferenceEvents.SERVER_REGION_CHANGED, serverRegion => {
