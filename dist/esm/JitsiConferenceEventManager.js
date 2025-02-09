@@ -235,11 +235,6 @@ JitsiConferenceEventManager.prototype.setupChatRoomListeners = function () {
             conference.eventEmitter.emit(JitsiConferenceEvents.START_MUTED_POLICY_CHANGED, conference.startMutedPolicy);
         }
     });
-    chatRoom.addListener(XMPPEvents.RESOLUTION_CHANGED, resolution => {
-        //_ TODO ywjang
-        console.log('CHANGE_RESOLUTION!!!!!!!');
-        conference.onChangeResolution(resolution);
-    });
     // Breakout rooms.
     this.chatRoomForwarder.forward(XMPPEvents.BREAKOUT_ROOMS_MOVE_TO_ROOM, JitsiConferenceEvents.BREAKOUT_ROOMS_MOVE_TO_ROOM);
     this.chatRoomForwarder.forward(XMPPEvents.BREAKOUT_ROOMS_UPDATED, JitsiConferenceEvents.BREAKOUT_ROOMS_UPDATED);
