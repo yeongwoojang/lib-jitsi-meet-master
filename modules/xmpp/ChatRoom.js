@@ -962,10 +962,7 @@ export default class ChatRoom extends Listenable {
         }
 
         this.connection.send(msg);
-        // this.eventEmitter.emit(XMPPEvents.SENDING_CHAT_MESSAGE, message);
-        this.eventEmitter.emit(
-            XMPPEvents.RESOLUTION_CHANGED,
-            '101010');
+        this.eventEmitter.emit(XMPPEvents.SENDING_CHAT_MESSAGE, message);
     }
 
     /**
