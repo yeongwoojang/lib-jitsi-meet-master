@@ -436,7 +436,7 @@ JitsiConferenceEventManager.prototype.setupChatRoomListeners = function() {
         }
     });
 
-    chatRoom.addListener(XMPPEvents.CHANGE_RESOLUTION, resolution => {
+    chatRoom.addListener(XMPPEvents.RESOLUTION_CHANGED, resolution => {
         //_ TODO ywjang
         console.log('CHANGE_RESOLUTION!!!!!!!');
         conference.onChangeResolution(resolution);

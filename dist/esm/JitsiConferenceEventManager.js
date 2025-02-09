@@ -235,7 +235,7 @@ JitsiConferenceEventManager.prototype.setupChatRoomListeners = function () {
             conference.eventEmitter.emit(JitsiConferenceEvents.START_MUTED_POLICY_CHANGED, conference.startMutedPolicy);
         }
     });
-    chatRoom.addListener(XMPPEvents.CHANGE_RESOLUTION, resolution => {
+    chatRoom.addListener(XMPPEvents.RESOLUTION_CHANGED, resolution => {
         //_ TODO ywjang
         console.log('CHANGE_RESOLUTION!!!!!!!');
         conference.onChangeResolution(resolution);
