@@ -564,6 +564,7 @@ export default class AvgRTPStatsReporter {
             this._onJvb121StatusChanged);
 
         this._onChangeResolution = (resolution) => {
+            this._conference.onChangeResolution(resolution);
             console.log('CHANGE_RESOLUTION 전송!!!', resolution);
         };
 

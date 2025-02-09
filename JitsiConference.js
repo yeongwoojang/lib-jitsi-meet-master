@@ -2007,6 +2007,7 @@ JitsiConference.prototype.onUserRoleChanged = function(jid, role) {
 };
 
 JitsiConference.prototype.onChangeResolution = function(resolution) {
+    console.log('onChangeResolution 드디어 전달됨!!!', resolution);
     this.eventEmitter.emit(
         JitsiConferenceEvents.CHANGE_RESOLUTION, resolution);
 };
