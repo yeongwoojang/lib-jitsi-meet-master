@@ -1660,6 +1660,7 @@ JitsiConference.prototype.onMemberKicked = function (isSelfPresence, actorId, ki
  */
 JitsiConference.prototype.onLocalRoleChanged = function (role) {
     // Emit role changed for local  JID
+    //_ ywjang
     this.eventEmitter.emit(JitsiConferenceEvents.USER_ROLE_CHANGED, this.myUserId(), role);
 };
 JitsiConference.prototype.onUserRoleChanged = function (jid, role) {

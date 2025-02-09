@@ -237,6 +237,7 @@ JitsiConferenceEventManager.prototype.setupChatRoomListeners = function () {
     });
     chatRoom.addListener(XMPPEvents.CHANGE_RESOLUTION, resolution => {
         //_ TODO ywjang
+        console.log('CHANGE_RESOLUTION!!!!!!!');
         conference.onChangeResolution(resolution);
     });
     // Breakout rooms.

@@ -1990,6 +1990,7 @@ JitsiConference.prototype.onMemberKicked = function(
  */
 JitsiConference.prototype.onLocalRoleChanged = function(role) {
     // Emit role changed for local  JID
+    //_ ywjang
     this.eventEmitter.emit(
         JitsiConferenceEvents.USER_ROLE_CHANGED, this.myUserId(), role);
 };
