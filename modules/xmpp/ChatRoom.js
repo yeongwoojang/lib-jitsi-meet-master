@@ -637,12 +637,9 @@ export default class ChatRoom extends Listenable {
             if (this.role !== newRole) {
                 this.role = newRole;
                 //_ TODO ywjang 데이터 전달 참고 코드
-                // this.eventEmitter.emit(
-                //     XMPPEvents.LOCAL_ROLE_CHANGED,
-                //     this.role);
                 this.eventEmitter.emit(
-                    XMPPEvents.RESOLUTION_CHANGED,
-                    '101010');
+                    XMPPEvents.LOCAL_ROLE_CHANGED,
+                    this.role);
             }
             if (!this.joined) {
                 this.joined = true;
@@ -965,7 +962,10 @@ export default class ChatRoom extends Listenable {
         }
 
         this.connection.send(msg);
-        this.eventEmitter.emit(XMPPEvents.SENDING_CHAT_MESSAGE, message);
+        // this.eventEmitter.emit(XMPPEvents.SENDING_CHAT_MESSAGE, message);
+        this.eventEmitter.emit(
+            XMPPEvents.RESOLUTION_CHANGED,
+            '101010');
     }
 
     /**
