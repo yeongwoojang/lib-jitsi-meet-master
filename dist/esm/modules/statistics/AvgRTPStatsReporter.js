@@ -473,10 +473,9 @@ export default class AvgRTPStatsReporter {
         };
         conference.on(ConferenceEvents.JVB121_STATUS, this._onJvb121StatusChanged);
         this._onChangeResolution = (resolution) => {
-            console.log('CHANGE_RESOLUTION 전송');
-            console.log(resolution);
+            console.log('CHANGE_RESOLUTION 전송!!!', resolution);
         };
-        conference.on(ConferenceEvents.CHANGE_RESOLUTION, this._onChangeResolution);
+        this._conference.on(ConnectionQualityEvents.RESOLUTION_CHANGED, this._onChangeResolution);
         this.jvbStatsMonitor
             = new ConnectionAvgStats(this, false /* JVB */, n);
         this.p2pStatsMonitor
