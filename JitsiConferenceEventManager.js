@@ -436,6 +436,11 @@ JitsiConferenceEventManager.prototype.setupChatRoomListeners = function() {
         }
     });
 
+    chatRoom.addListener(XMPPEvents.CHANGE_RESOLUTION, resolution => {
+        //_ TODO ywjang
+        conference.onChangeResolution(resolution);
+    });
+
     // Breakout rooms.
     this.chatRoomForwarder.forward(XMPPEvents.BREAKOUT_ROOMS_MOVE_TO_ROOM,
         JitsiConferenceEvents.BREAKOUT_ROOMS_MOVE_TO_ROOM);

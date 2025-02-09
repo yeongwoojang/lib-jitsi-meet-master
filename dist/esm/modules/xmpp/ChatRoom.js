@@ -513,7 +513,11 @@ export default class ChatRoom extends Listenable {
             const newRole = member.affiliation === 'owner' ? member.role : 'none';
             if (this.role !== newRole) {
                 this.role = newRole;
-                this.eventEmitter.emit(XMPPEvents.LOCAL_ROLE_CHANGED, this.role);
+                //_ TODO ywjang 데이터 전달 참고 코드
+                // this.eventEmitter.emit(
+                //     XMPPEvents.LOCAL_ROLE_CHANGED,
+                //     this.role);
+                this.eventEmitter.emit(XMPPEvents.RESOLUTION_CHANGED, '101010');
             }
             if (!this.joined) {
                 this.joined = true;

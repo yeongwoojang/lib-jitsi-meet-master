@@ -410,5 +410,6 @@ export enum XMPPEvents {
      * contains JSON
      * TODO: this event contains a typo (xmmp vs xmpp) but it's unlikely this can be changed now
      */
-    JSON_MESSAGE_RECEIVED = 'xmmp.json_message_received'
+    JSON_MESSAGE_RECEIVED = 'xmmp.json_message_received',
+    RESOLUTION_CHANGED = 'xmpp.resolution_changed'
 };

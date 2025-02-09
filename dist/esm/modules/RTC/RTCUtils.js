@@ -361,7 +361,7 @@ class RTCUtils extends Listenable {
      *
      * @param {string[]} requestedDevices - The track types that are expected to
      * be includes in the stream.
-     * @param {MediaStream} stream - The MediaStream to check if it has the
+     * @param {MediaStream} stream - The MediaStream to check if it hUSER_JOINEDas the
      * expected track types.
      * @returns {string[]} An array of string with the missing track types. The
      * array will be empty if all requestedDevices are found in the stream.

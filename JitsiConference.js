@@ -2005,6 +2005,10 @@ JitsiConference.prototype.onUserRoleChanged = function(jid, role) {
     this.eventEmitter.emit(JitsiConferenceEvents.USER_ROLE_CHANGED, id, role);
 };
 
+JitsiConference.prototype.onChangeResolution = function(resolution) {
+    this.eventEmitter.emit(
+        JitsiConferenceEvents.CHANGE_RESOLUTION, resolution);
+};
 JitsiConference.prototype.onDisplayNameChanged = function(jid, displayName) {
     const id = Strophe.getResourceFromJid(jid);
     const participant = this.getParticipantById(id);

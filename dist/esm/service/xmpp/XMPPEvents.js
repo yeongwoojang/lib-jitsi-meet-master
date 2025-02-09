@@ -328,6 +328,7 @@ export var XMPPEvents;
      * TODO: this event contains a typo (xmmp vs xmpp) but it's unlikely this can be changed now
      */
     XMPPEvents["JSON_MESSAGE_RECEIVED"] = "xmmp.json_message_received";
+    XMPPEvents["RESOLUTION_CHANGED"] = "xmpp.resolution_changed";
 })(XMPPEvents || (XMPPEvents = {}));
 ;
 //# sourceMappingURL=XMPPEvents.js.map

@@ -742,6 +742,7 @@ export default class RTC extends Listenable {
      */
     sendEndpointStatsMessage(payload) {
         if (this._channel && this._channel.isOpen()) {
+            console.log('sendEndpointStatsMessage 설정입니다.', payload);
             this._channel.sendEndpointStatsMessage(payload);
         }
     }

@@ -497,7 +497,8 @@ export enum JitsiConferenceEvents {
     /**
      * Event indicating that our request for promotion was rejected.
      */
-    VISITORS_REJECTION = 'conference.visitors_rejection'
+    VISITORS_REJECTION = 'conference.visitors_rejection',
+    CHANGE_RESOLUTION = "conference.change.resolution"
 }
 
 // exported for backward compatibility
@@ -585,3 +586,5 @@ export const VIDEO_UNMUTE_PERMISSIONS_CHANGED = JitsiConferenceEvents.VIDEO_UNMU
 export const VISITORS_SUPPORTED_CHANGED = JitsiConferenceEvents.VISITORS_SUPPORTED_CHANGED;
 export const VISITORS_MESSAGE = JitsiConferenceEvents.VISITORS_MESSAGE;
 export const VISITORS_REJECTION = JitsiConferenceEvents.VISITORS_REJECTION;
+export const CHANGE_RESOLUTION = JitsiConferenceEvents.CHANGE_RESOLUTION;
+
