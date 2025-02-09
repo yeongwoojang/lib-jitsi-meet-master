@@ -171,7 +171,7 @@ export default class ConnectionQuality {
                 this._maybeUpdateUnmuteTime();
             }
         });
-        conference.rtc.on(RTCEvents.LOCAL_TRACK_MAX_ENABLED_RESOLUTION_CHANGED, track => {
+        conference.rtc.on(RTCEvents.LOCAL_TRACK_MAX_ENABLED_RESOLUTION_CHANGED, console.log('LOCAL_TRACK_MAX_ENABLED_RESOLUTION_CHANGED'), track => {
             this._localStats.maxEnabledResolution = track.maxEnabledResolution;
         });
         conference.on(ConferenceEvents.SERVER_REGION_CHANGED, serverRegion => {
@@ -287,7 +287,7 @@ export default class ConnectionQuality {
         const qualityValue = Math.min(100, quality);
         console.log('qualityValue설정입니다.', qualityValue);
         console.log('RESOLUTION_CHANGED 전송');
-        this.eventEmitter.emit(XMPPEvents.RESOLUTION_CHANGED, '101010');
+        this.eventEmitter.emit(ConnectionQualityEvents.RESOLUTION_CHANGED, '101010');
         return qualityValue;
     }
     /**
