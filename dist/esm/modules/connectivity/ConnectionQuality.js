@@ -286,6 +286,7 @@ export default class ConnectionQuality {
         }
         const qualityValue = Math.min(100, quality);
         console.log('qualityValue설정입니다.', qualityValue);
+        console.log('RESOLUTION_CHANGED 전송');
         this.eventEmitter.emit(XMPPEvents.RESOLUTION_CHANGED, '101010');
         return qualityValue;
     }
