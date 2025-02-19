@@ -567,6 +567,7 @@ export default class JitsiLocalTrack extends JitsiTrack {
      * @returns {void}
      */
     _switchCamera() {
+        console.log("TEST_LOG | _switchCamera");
         if (this.isVideoTrack()
                 && this.videoType === VideoType.CAMERA
                 && typeof this.track._switchCamera === 'function') {
