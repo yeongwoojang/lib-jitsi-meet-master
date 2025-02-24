@@ -126,6 +126,7 @@ export default class SendVideoController {
         this._preferredSendMaxFrameHeight = maxFrameHeight;
         const promises = [];
         for (const sourceName of this._sourceSenderConstraints.keys()) {
+            console.log('TEST_LOG | sourceName: ', sourceName);
             promises.push(this._propagateSendMaxFrameHeight(sourceName));
         }
         return Promise.allSettled(promises);
